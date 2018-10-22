@@ -10,6 +10,9 @@
 
 @interface ViewController : NSViewController
 
+@property (weak) IBOutlet NSTextField *nameField;
+@property (weak) IBOutlet NSTextField *helloLabel;
+- (IBAction)sayButtonClicked:(id)sender;
 
 @end
 
