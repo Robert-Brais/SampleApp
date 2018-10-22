@@ -30,9 +30,21 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testSayHelloWorld {
+    
+    XCUIElement *window = [[XCUIApplication alloc] init].windows[@"Window"];
+    [window.buttons[@"Say hello"] click];
+    [window.staticTexts[@"Hello World!"] click];
+    
+}
+
+-(void) testSayHelloName{
+    
+    XCUIElement *window = [[XCUIApplication alloc] init].windows[@"Window"];
+    [window.textFields[@"Enter your name here..."] typeText:@"Jane Doe"];
+    [window.buttons[@"Say hello"] click];
+    [window.staticTexts[@"Hello Jane Doe!"] click];
+    
 }
 
 @end
